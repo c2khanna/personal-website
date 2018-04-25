@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgsRevealConfig } from 'ng-scrollreveal';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  col1Config: NgsRevealConfig;
+
+  constructor() { 
+	this.col1Config = {reset:true, viewFactor: 0.999};
+  }
 
   ngOnInit() {
   }

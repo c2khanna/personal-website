@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgsRevealConfig } from 'ng-scrollreveal';
 
 @Component({
   selector: 'app-about-me',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-  constructor() { }
+  bodyConfig: NgsRevealConfig;
+
+  constructor() { 
+  	this.bodyConfig = {reset:true, viewFactor: 0.3};
+  }
 
   ngOnInit() {
   }

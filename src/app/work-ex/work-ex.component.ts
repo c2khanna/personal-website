@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgsRevealConfig } from 'ng-scrollreveal';
 
 @Component({
   selector: 'app-work-ex',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WorkExComponent implements OnInit {
 
-  constructor() { }
+  headingConfig: NgsRevealConfig;
+
+  constructor() { 
+	this.headingConfig = {reset:true, viewFactor: 0.9};
+  }
 
   ngOnInit() {
   }
