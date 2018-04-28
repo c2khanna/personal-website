@@ -8,10 +8,10 @@ import { NgsRevealConfig } from 'ng-scrollreveal';
 })
 export class HomeComponent implements OnInit {
 
-  col1Config: NgsRevealConfig;
+  nameConfig: NgsRevealConfig;
 
-  constructor() { 
-	this.col1Config = {reset:true, viewFactor: 0.999};
+  constructor() {
+    this.nameConfig = {reset: true, viewFactor: 0.8, viewOffset: {top: 56, right: 0, bottom: 0, left: 0}};
   }
 
   ngOnInit() {

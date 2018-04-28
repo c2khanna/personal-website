@@ -1,24 +1,24 @@
 <nav class="navbar navbar-expand-md fixed-top">
-  <a class="navbar-brand name" href="#" [@scrollAnimation]="state">Chaitanya Khanna</a>
+  <a class="navbar-brand name" pageScroll [pageScrollOffset]="100" [pageScrollDuration]="100" href="#home" [@scrollAnimation]="state">Chaitanya Khanna</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link"> Home</a>
+        <a pageScroll [pageScrollOffset]="100" [pageScrollDuration]="300" href="#home" class="nav-link"> Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">About Me</a>
+        <a pageScroll [pageScrollOffset]="100" [pageScrollDuration]="300" href="#about-me" class="nav-link">About Me</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Work Experience</a>
+        <a pageScroll [pageScrollOffset]="56" [pageScrollDuration]="300" href="#work-ex" class="nav-link">Work Experience</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Projects</a>
+        <a pageScroll [pageScrollOffset]="56" [pageScrollDuration]="300" href="#proj" class="nav-link">Projects</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link">Contact Me</a>
+        <a pageScroll [pageScrollOffset]="100" [pageScrollDuration]="300" href="#contact-me" class="nav-link">Contact Me</a>
       </li>
     </ul>
   </div>
