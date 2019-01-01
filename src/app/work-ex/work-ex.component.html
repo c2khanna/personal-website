@@ -6,6 +6,14 @@
     <h1 [ngsReveal]="headingConfig">Work Experience</h1>
   </div>
   <div class="work-ex-content">
-    
+    <mgl-timeline>
+      <div *ngFor="let year of workExData;">
+        <app-work-ex-year
+          [displayYear]=Object.keys(year)[0]>
+        </app-work-ex-year>
+        <app-work-ex-position *ngFor="let job of year[Object.keys(year)[0]].jobs" [job]=job>
+        </app-work-ex-position>
+      </div>
+    </mgl-timeline>
   </div>
 </div>

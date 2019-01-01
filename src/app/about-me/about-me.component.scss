@@ -1,10 +1,22 @@
-.about-me-container{
-    min-height: 100%;
+.about-me-container {
     padding-bottom: 5%;
     padding-left: 10%;
     padding-right: 25%;
+    display: table;
 }
 
-.about-me-content{
+img {
+    margin-left: 20%;
+    border-radius: 50%;
+    width: 40%;
+}
 
+.left-about-me {
+    float: left;
+    width: 70%;
+}
+
+.right-about-me-pic {
+    float: right;
+    width: 30%;
 }
