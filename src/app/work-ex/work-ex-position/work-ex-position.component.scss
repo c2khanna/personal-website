@@ -1,6 +1,7 @@
 .primary-circle {
   background-color: #393e4f;
   cursor: pointer;
+  left: calc(100% + 5px) !important;
 }
 
 .job-header {
@@ -40,4 +41,11 @@
   font-size: 16px;
   clear: both;
   padding: 10px;
+}
+
+.alternate {
+    margin-left: calc(50% + 5px);
+    .primary-circle {
+      left: -5px !important;
+    }
 }

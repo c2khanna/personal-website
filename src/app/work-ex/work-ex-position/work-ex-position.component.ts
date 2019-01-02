@@ -10,6 +10,7 @@ import Job from './job';
 export class WorkExPositionComponent implements OnInit {
 
   @Input() job: Job;
+  @Input() alternate: Boolean;
   isExpanded: Boolean;
   startAndEndDate: string;
   techString: string = '';
@@ -23,6 +24,7 @@ export class WorkExPositionComponent implements OnInit {
 
     // concat technologies into 1 line
     this.concatJobTech();
+    
   }
 
   setupStartAndEndDate() {

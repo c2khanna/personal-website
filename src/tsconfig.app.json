@@ -4,7 +4,15 @@
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "es2015",
-    "types": []
+    "types": [],
+    "paths": {
+      "work-ex-timeline": [
+        "../dist/work-ex-timeline"
+      ],
+      "work-ex-timeline/*": [
+        "../dist/work-ex-timeline/*"
+      ]
+    }
   },
   "exclude": [
     "test.ts",

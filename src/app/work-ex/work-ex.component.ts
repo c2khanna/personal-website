@@ -12,6 +12,7 @@ export class WorkExComponent implements OnInit {
   headingConfig: NgsRevealConfig;
   workExData: Array<Object>;
   Object: Object;
+  alternate: boolean = true;
 
   constructor() {
     this.Object = Object;
@@ -20,5 +21,10 @@ export class WorkExComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  toggleAlternate() {
+    this.alternate = !this.alternate;
+    return this.alternate;
   }
 }

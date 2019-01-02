@@ -16,6 +16,14 @@
       "dom"
     ],
     "module": "es2015",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "work-ex-timeline": [
+        "dist/work-ex-timeline"
+      ],
+      "work-ex-timeline/*": [
+        "dist/work-ex-timeline/*"
+      ]
+    }
   }
 }
