@@ -3,6 +3,28 @@ export const WORK_EX_DATA = [
     Now: {
       jobs: [
         {
+          jobTitle: 'Consultant',
+          company: 'Capgemini Canada',
+          technologies: [
+            'ReactJS',
+            'Redux',
+            'Node',
+          ],
+          startDate: '2018-10-15',
+          endDate: '',
+          description: [
+            'Developed a new web conferencing application using React and Redux',
+            'Integrated Twilio call API for VOIP and dial out capabilities',
+            'Implemented user feedback over iterations to improve user interface and overall experience',
+          ]
+        }
+      ]
+    }
+  },
+  {
+    2018: {
+      jobs: [
+        {
           jobTitle: 'Full Stack Developer',
           company: 'Go Ubiq Inc. (YC S17)',
           technologies: [
@@ -10,8 +32,8 @@ export const WORK_EX_DATA = [
             'Redux',
             'SASS',
           ],
-          startDate: '2018-06-02',
-          endDate: '',
+          startDate: '2018-07-02',
+          endDate: '2018-10-02',
           description: [
             'Developed a new web conferencing application using React and Redux',
             'Integrated Twilio call API for VOIP and dial out capabilities',

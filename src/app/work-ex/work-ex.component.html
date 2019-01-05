@@ -5,7 +5,7 @@
     <br/>
     <h1 [ngsReveal]="headingConfig">Work Experience</h1>
   </div>
-  <div class="work-ex-content">
+  <div class="work-ex-content" [ngsReveal]="bodyConfig">
     <enl-work-ex-timeline [alternate]=true>
       <div *ngFor="let year of workExData;">
         <app-work-ex-year

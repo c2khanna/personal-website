@@ -10,6 +10,7 @@ import { WORK_EX_DATA } from './work-ex-data';
 export class WorkExComponent implements OnInit {
 
   headingConfig: NgsRevealConfig;
+  bodyConfig: NgsRevealConfig;
   workExData: Array<Object>;
   Object: Object;
   alternate: boolean = true;
@@ -18,6 +19,7 @@ export class WorkExComponent implements OnInit {
     this.Object = Object;
     this.workExData = WORK_EX_DATA;
     this.headingConfig = {reset: true, viewFactor: 0.9, viewOffset: {top: 56, right: 0, bottom: 0, left: 0}};
+    this.bodyConfig = {reset: true, viewFactor: 0.15, viewOffset: {top: 56, right: 0, bottom: 0, left: 0}};
   }
 
   ngOnInit() {
