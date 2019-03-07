@@ -1,26 +1,25 @@
-export default class Job {
-  jobTitle: string;
-  company: string;
+import Link from './link';
+
+export default class Project {
+  name: string;
   technologies: Array<string>;
   startDate: string;
   endDate: string;
+  links: Array<Link>;
   description: Array<string>;
-  alternate: boolean;
 
-  constructor(jobTitle: string,
-    company: string,
+  constructor(name: string,
     technologies: Array<string>,
     startDate: string,
     endDate: string,
-    description: Array<string>,
-    alternate: boolean
+    links: Array<Link>,
+    description: Array<string>
   ) {
-    this.jobTitle = jobTitle;
-    this.company = company;
+    this.name = name;
     this.technologies = technologies;
     this.startDate = startDate;
     this.endDate = endDate;
+    this.links = links;
     this.description = description;
-    this.alternate = alternate;
   }
 }

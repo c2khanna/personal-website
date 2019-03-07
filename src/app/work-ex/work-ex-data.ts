@@ -4,19 +4,20 @@ export const WORK_EX_DATA = [
       jobs: [
         {
           jobTitle: 'Consultant',
-          company: 'Capgemini Canada',
+          company: 'Capgemini Canada Inc. (Manulife)',
           technologies: [
+            'Node.js',
             'ReactJS',
             'Redux',
-            'Node',
           ],
           startDate: '2018-10-15',
           endDate: '',
           description: [
-            'Developed a new web conferencing application using React and Redux',
-            'Integrated Twilio call API for VOIP and dial out capabilities',
-            'Implemented user feedback over iterations to improve user interface and overall experience',
-          ]
+            'Developed and maintained the customer login portal for Manulife',
+            'Integrated single sign-on service for various other Manulife products',
+            'Improved Jest unit test coverage to 75% and enforced coverage rules in development pipelines',
+          ],
+          alternate: false
         }
       ]
     }
@@ -38,7 +39,8 @@ export const WORK_EX_DATA = [
             'Developed a new web conferencing application using React and Redux',
             'Integrated Twilio call API for VOIP and dial out capabilities',
             'Implemented user feedback over iterations to improve user interface and overall experience',
-          ]
+          ],
+          alternate: true
         }
       ]
     }
@@ -60,7 +62,8 @@ export const WORK_EX_DATA = [
             'Updated desktop client with a new sharing permission level of a cloud-based content management system',
             'Improved user experience to help users locate sync errors easily',
             'Created end to end test suite for the new permission level to aid development',
-          ]
+          ],
+          alternate: false
         },
         {
           jobTitle: 'Software Developer',
@@ -77,6 +80,7 @@ export const WORK_EX_DATA = [
             'Enhanced synchronization engine to improve accuracy of image overlays in Windows Explorer and Mac Finder',
             'Created end to end tests using pytest and increased test coverage to 60%',
           ],
+          alternate: true
         }
       ]
     }
@@ -98,6 +102,7 @@ export const WORK_EX_DATA = [
             'Developed a service to asynchronously execute SQL queries using WebMethods',
             'Created a cluster and a sender/receiver app for continuous message processing; processed 5 to 10kb messages at up to 60,000 msgs/hr',
           ],
+          alternate: false
         }
       ]
     }
@@ -120,6 +125,7 @@ export const WORK_EX_DATA = [
             'Enhanced the in-house report management system using SQL stored procedures',
             'Implemented an interactive training module using AngularJS backed by a SOAP based service',
           ],
+          alternate: true
         },
         {
           jobTitle: 'Mobile Web Developer',
@@ -136,6 +142,7 @@ export const WORK_EX_DATA = [
             'Implemented automated tests using SPOCK testing framework',
             'Complete regression testing of the iOS and Android application'
           ],
+          alternate: false
         }
       ]
     }

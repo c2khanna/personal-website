@@ -1,4 +1,4 @@
-<app-work-ex-timeline-entry (expand)="onExpandEntry($event)" class="{{alternate ? 'alternate' : ''}}">
+<app-work-ex-timeline-entry (expand)="onExpandEntry($event)" class="{{getAlternate() ? 'alternate' : ''}}">
   <app-work-ex-timeline-entry-header class="{{isExpanded ? 'job-header' : 'job-header header-not-expanded'}}">
     <div>{{job.company}}</div>
     <div style="font-style: italic">{{job.jobTitle}}</div>
@@ -21,6 +21,6 @@
   </app-work-ex-timeline-entry-content>
   <app-work-ex-timeline-entry-dot class="{{isExpanded ? 'primary-circle' : 'primary-circle circle-not-expanded'}}"
                           [size]="30"
-                          [isAlternate]="alternate">
+                          [isAlternate]="getAlternate()">
   </app-work-ex-timeline-entry-dot>
 </app-work-ex-timeline-entry>

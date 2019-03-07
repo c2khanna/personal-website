@@ -12,6 +12,7 @@ import { WorkExComponent } from './work-ex/work-ex.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { WorkExYearComponent } from './work-ex/work-ex-year/work-ex-year.component';
 import { WorkExPositionComponent } from './work-ex/work-ex-position/work-ex-position.component';
+import { ProjectTileComponent } from './projects/project-tile/project-tile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { WorkExPositionComponent } from './work-ex/work-ex-position/work-ex-posi
     WorkExComponent,
     ProjectsComponent,
     WorkExYearComponent,
-    WorkExPositionComponent
+    WorkExPositionComponent,
+    ProjectTileComponent
   ],
   imports: [
     BrowserModule,
