@@ -9,13 +9,15 @@ export const WORK_EX_DATA = [
             'Node.js',
             'ReactJS',
             'Redux',
+            'Java',
           ],
           startDate: '2018-10-15',
           endDate: '',
           description: [
-            'Developed and maintained the customer login portal for Manulife',
-            'Integrated single sign-on service for various other Manulife products',
-            'Improved Jest unit test coverage to 75% and enforced coverage rules in development pipelines',
+            'Undertook the role of technical lead and managed a team of six developers for a UI reskinning project at Manulife',
+            'Developed a unified customer login portal for all Manulife products',
+            'Implemented a microservice which seamlessly authenticates users between legacy and modern applications using Spring Boot',
+            'Improved unit test coverage to 75% and enforced continuous integration rules in development pipelines',
           ],
           alternate: false
         }
@@ -100,7 +102,8 @@ export const WORK_EX_DATA = [
           description: [
             'Optimized SQL queries by creating SQL indexes and adding index hints',
             'Developed a service to asynchronously execute SQL queries using WebMethods',
-            'Created a cluster and a sender/receiver app for continuous message processing; processed 5 to 10kb messages at up to 60,000 msgs/hr',
+            'Created a cluster and a sender/receiver app for continuous message processing;' +
+              'processed 5 to 10kb messages at up to 60,000 msgs/hr',
           ],
           alternate: false
         }
@@ -147,4 +150,4 @@ export const WORK_EX_DATA = [
       ]
     }
   }
-]
+];

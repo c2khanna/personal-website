@@ -5,7 +5,7 @@
 To run this project locally:
 
 1. Clone or download the repository
-2. Run `ng build work-ex-timeline` to build the local library
+2. Run `npm run build:timeline` to build the local library
 3. Run `npm install` to install all node modules
 3. Run `ng serve` or `npm start` to start the local dev server
 4. The website will be accessible at [http://localhost:4200/](http://localhost:4200/)
@@ -27,3 +27,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Deploy to gcp
+
+`gcloud app deploy --version=prod`
