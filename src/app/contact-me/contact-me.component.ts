@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { NgsRevealConfig } from 'ng-scrollreveal';
 import { FormsModule } from '@angular/forms';
-
+import { SG_KEY } from './constants';
 @Component({
   selector: 'app-contact-me',
   templateUrl: './contact-me.component.html',
@@ -47,7 +47,7 @@ export class ContactMeComponent implements OnInit {
       this.isButtonEnabled = true;
     } else {
       let mailBody: String = message+"\n\nMy contact info is:\n"+ name + "\n" + email + "\n" + number;
-      fetch("https://us-central1-personalwebsite-234004.cloudfunctions.net/sendgridEmail?sg_key=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", {
+      fetch(`https://us-central1-personalwebsite-234004.cloudfunctions.net/sendgridEmail?sg_key=${SG_KEY}`, {
         method: "post",
         headers: {
           'Accept': 'application/json',
@@ -66,9 +66,9 @@ export class ContactMeComponent implements OnInit {
         console.log('i was successful');
         this.handleSuccess();
       })
-      .catch( (error) =>{
+      .catch( (error) => {
         console.log('i errored out');
-        alert("Something went wrong, please try again");
+        alert('Something went wrong, please try again');
         console.log(error);
         this.isButtonEnabled = true;
       });
