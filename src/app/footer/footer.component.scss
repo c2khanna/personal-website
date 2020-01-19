@@ -1,0 +1,27 @@
+.footer-container {
+  height: 100px;
+  background-color: #393E4F;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 29px;
+
+  .linkedin-logo {
+    padding-bottom: 9px;
+  }
+
+  .gh-logo {
+    padding-bottom: 5px;
+  }
+
+  .resume-logo {
+    padding: 3px;
+  }
+
+  img {
+    height: 30px;
+    width: 30px;
+    border-radius: 24px;
+    background-color: #ffffff;
+    margin: 6px;
+  }
+}

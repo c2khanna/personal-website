@@ -13,6 +13,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { WorkExYearComponent } from './work-ex/work-ex-year/work-ex-year.component';
 import { WorkExPositionComponent } from './work-ex/work-ex-position/work-ex-position.component';
 import { ProjectTileComponent } from './projects/project-tile/project-tile.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ProjectTileComponent } from './projects/project-tile/project-tile.compo
     ProjectsComponent,
     WorkExYearComponent,
     WorkExPositionComponent,
-    ProjectTileComponent
+    ProjectTileComponent,
+    ContactMeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

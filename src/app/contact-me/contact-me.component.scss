@@ -1,0 +1,57 @@
+.heading-container{
+    background-image: -webkit-linear-gradient(260deg, #E9E9EB 50%, #393E4F 50%);
+    padding-top: 10%;
+    padding-bottom: 2%;
+    padding-left: 10%;
+    padding-right: 25%;
+    color: #FFF;
+}
+.contact-me-content{
+    width: 100%;
+    margin-top: 150px;
+    min-height: 600px;
+    text-align: center;
+
+    .contact-me-intro {
+      margin: auto;
+      width: 25%;
+      padding-bottom: 12px;
+      font-size: 18px;
+    }
+
+    input,
+    textarea {
+      width: 35%;
+      margin: 6px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      height: 35px;
+      padding-left: 10px;
+      padding-top: 6px;
+      outline: none;
+    }
+
+    textarea {
+      height: 150px;
+    }
+
+    button {
+      width: 15%;
+      margin-top: 12px;
+      height: 45px;
+      background-color: #393E4F;
+      border: 1px solid #ccc;
+      color: #ffffff;
+      border-radius: 24px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    button:active {
+      background: #606472;
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+         -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+              box-shadow: inset 0px 0px 5px #c1c1c1;
+       outline: none;
+    }
+}

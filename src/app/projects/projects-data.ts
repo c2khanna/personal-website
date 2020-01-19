@@ -6,6 +6,7 @@ export const PROJECTS = [
       'Node.js',
       'AWS',
     ],
+    img: 'assets/affineLogo.png',
     startDate: '2017-10-15',
     endDate: '2017-11-15',
     links: [{
@@ -30,6 +31,7 @@ export const PROJECTS = [
       'HTML5',
       'CSS',
     ],
+    img: 'assets/uberLogo.png',
     startDate: '2016-03-01',
     endDate: '2016-03-30',
     links: [{
@@ -53,6 +55,7 @@ export const PROJECTS = [
       'MongoDB',
       'SASS',
     ],
+    img: 'assets/lcboLogo.png',
     startDate: '2016-01-01',
     endDate: '2016-01-30',
     links: [{

@@ -1,0 +1,7 @@
+{
+  "EVENT_BUCKET": "personalWebsite_Bucket",
+  "DATASET": "personalWebsite_Dataset",
+  "TABLE": "events",
+  "USERNAME": "c2khanna",
+  "PASSWORD": "qwerty1234"
+}

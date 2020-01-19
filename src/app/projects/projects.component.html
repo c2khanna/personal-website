@@ -5,7 +5,13 @@
     <br/>
     <h1 [ngsReveal]="headingConfig">Projects</h1>
   </div>
-  <div class="projects-content">
-    
+  <div class="projects-content" [ngsReveal]="bodyConfig">
+        <div class="row">
+          <ng-container *ngFor="let proj of projects">
+            <div class="col-4">
+              <app-project-tile [project]=proj></app-project-tile>
+            </div>
+          </ng-container>
+        </div>
   </div>
 </div>
