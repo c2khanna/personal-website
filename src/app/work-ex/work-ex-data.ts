@@ -9,15 +9,15 @@ export const WORK_EX_DATA = [
             'Node.js',
             'ReactJS',
             'Redux',
-            'Java',
           ],
           startDate: '2018-10-15',
           endDate: '',
           description: [
-            'Undertook the role of technical lead and managed a team of six developers for a UI reskinning project at Manulife',
-            'Developed a unified customer login portal for all Manulife products',
-            'Implemented a microservice which seamlessly authenticates users between legacy and modern applications using Spring Boot',
-            'Improved unit test coverage to 75% and enforced continuous integration rules in development pipelines',
+            'Developed a unified customer login portal for all Manulife products using ReactJS and Node.js',
+            'Implemented state management using Redux to reduce redundant network calls and improve latency',
+            'Designed the architecture for session management to create a seamless single sign-in experience across legacy and modern Manulife products',
+            'Undertook the role of technical lead and managed a team of four developers for a UI reskinning project at Manulife',
+            'Improved unit test coverage to 75% using Jest and Enzyme and enforced continuous integration rules in development pipelines',
           ],
           alternate: false
         }

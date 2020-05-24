@@ -62,10 +62,6 @@ export const PROJECTS = [
       type: 'GitHub',
       display: 'github.com/c2khanna/lcbo-sales',
       ref: 'https://github.com/c2khanna/lcbo-sales',
-    }, {
-      type: 'Demo',
-      display: 'notforthetaste.com',
-      ref: 'https://www.notforthetaste.com',
     }],
     description: [
       'A Node.js based application that Queries the LCBO product list to extract all current items on sale',
