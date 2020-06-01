@@ -5,8 +5,7 @@
 To run this project locally:
 
 1. Clone or download the repository
-2. Run `npm run build:timeline` to build the local library
-3. Run `npm install` to install all node modules
+2. Run `npm install` to install all node modules
 3. Run `ng serve` or `npm start` to start the local dev server
 4. The website will be accessible at [http://localhost:4200/](http://localhost:4200/)
 

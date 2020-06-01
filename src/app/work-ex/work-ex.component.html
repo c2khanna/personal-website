@@ -6,14 +6,42 @@
     <h1 [ngsReveal]="headingConfig">Work Experience</h1>
   </div>
   <div class="work-ex-content" [ngsReveal]="bodyConfig">
-    <enl-work-ex-timeline>
-      <div *ngFor="let year of workExData;">
-        <app-work-ex-year
-          [displayYear]=Object.keys(year)[0]>
-        </app-work-ex-year>
-        <app-work-ex-position *ngFor="let job of year[Object.keys(year)[0]].jobs" [job]=job>
-        </app-work-ex-position>
-      </div>
-    </enl-work-ex-timeline>
+    <mgl-timeline [toggle]="true" [alternate]="false" side="right">
+      <mgl-timeline-entry *ngFor="let entry of workExData;let i = index;" class="work-ex-year" (expand)="onExpandEntry($event, i)">
+        <mgl-timeline-entry-header *ngIf="entry.isYear" style="display: none;" >
+        </mgl-timeline-entry-header>
+        <mgl-timeline-entry-content *ngIf="entry.isYear" style="display: none;">
+        </mgl-timeline-entry-content>
+        <mgl-timeline-entry-dot *ngIf="entry.isYear"
+                                class="work-ex-year-circle"
+                                size="50"
+                                (click)="onExpandYear($event)">
+                                {{entry.year}}
+        </mgl-timeline-entry-dot>
+        <mgl-timeline-entry-header *ngIf="!entry.isYear" class="{{entry.isExpanded ? 'job-header' : 'job-header header-not-expanded'}}" >
+          <div>{{entry.company}}</div>
+          <div style="font-style: italic">{{entry.jobTitle}}</div>
+        </mgl-timeline-entry-header>
+        <mgl-timeline-entry-content *ngIf="!entry.isYear" class="job-content">
+          <div>
+            <div class="job-subtitle">
+              <p class="job-technologies">{{concatJobTech(entry)}}</p>
+              <p class="job-times">{{setupStartAndEndDate(entry)}}</p>
+            </div>
+            <br/>
+            <div class="job-description">
+              <ul>
+                <li *ngFor="let desc of entry.description">
+                  {{desc}}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </mgl-timeline-entry-content>
+        <mgl-timeline-entry-dot *ngIf="!entry.isYear" class="{{entry.isExpanded ? 'primary-circle' : 'primary-circle circle-not-expanded'}}"
+                                [size]="30">
+        </mgl-timeline-entry-dot>
+      </mgl-timeline-entry>
+    </mgl-timeline>
   </div>
 </div>

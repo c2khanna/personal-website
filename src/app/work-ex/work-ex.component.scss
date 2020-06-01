@@ -10,5 +10,66 @@
     min-height: 600px;
     padding-top: 20px;
     width: 70%;
-    margin: auto;
+}
+
+@media (max-width: 640px) {
+  .work-ex-content{
+      width: 90%;
+      margin: auto;
+  }
+}
+.work-ex-year {
+  height: 100%;
+  min-height: 10px;
+}
+
+.work-ex-year-circle {
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  background-color: #393e4f;
+}
+
+.primary-circle {
+  background-color: #393e4f;
+  cursor: pointer;
+}
+
+.job-header {
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.header-not-expanded {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.circle-not-expanded {
+  z-index: 2;
+}
+
+.job-content{
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+}
+
+.job-subtitle {
+  font-size: 14px;
+  padding: 10px;
+}
+
+.job-technologies {
+  float: left;
+}
+
+.job-times {
+  float: right;
+}
+
+.job-description {
+  font-size: 16px;
+  clear: both;
+  padding: 10px;
 }
