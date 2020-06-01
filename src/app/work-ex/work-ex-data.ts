@@ -22,7 +22,7 @@ export const WORK_EX_DATA = [
     ]
   }, {
     isYear: true,
-    year: '2018'
+    year: 2018
   }, {
     isYear: false,
     jobTitle: 'Full Stack Developer',

@@ -4,6 +4,11 @@ import { WORK_EX_DATA } from './work-ex-data';
 import * as moment from 'moment'
 import Job from './job';
 
+interface Entry {
+  isYear: boolean,
+  isExpanded: boolean
+}
+
 @Component({
   selector: 'app-work-ex',
   templateUrl: './work-ex.component.html',
@@ -13,7 +18,7 @@ export class WorkExComponent implements OnInit {
 
   headingConfig: NgsRevealConfig;
   bodyConfig: NgsRevealConfig;
-  workExData: Array<Object>;
+  workExData: Array<any>;
 
   constructor() {
     this.workExData = WORK_EX_DATA;
