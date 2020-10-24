@@ -4,7 +4,7 @@ export const WORK_EX_DATA = [
     year: 'Now'
   },{
     isYear: false,
-    jobTitle: 'Consultant',
+    jobTitle: 'Software Consultant',
     company: 'Capgemini Canada Inc. (Manulife)',
     technologies: [
       'Node.js',
