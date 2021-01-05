@@ -17,5 +17,6 @@
     ],
     "module": "es2015",
     "baseUrl": "./",
+    "skipLibCheck": true
   }
 }
