@@ -15,4 +15,14 @@ export class ProjectTileComponent implements OnInit {
   ngOnInit() {
   }
 
+  getTechnologiesList() {
+    let returnString = '';
+    for(let i = 0; i < this.project.technologies.length - 1; i++) {
+      returnString += this.project.technologies[i];
+      if(i < this.project.technologies.length - 2){ 
+        returnString += ' | ';
+      }
+    }
+    return returnString;
+  }
 }

@@ -1,5 +1,30 @@
 export const PROJECTS = [
   {
+    name: 'Key Picker',
+    technologies: [
+      'Angular',
+      'Node.js',
+      'AWS',
+    ],
+    img: 'assets/keyPickerLogo.jpeg',
+    startDate: '2020-12-15',
+    endDate: '2020-12-20',
+    links: [{
+      type: 'GitHub',
+      display: 'github.com/c2khanna/key-picker',
+      ref: 'https://github.com/c2khanna/key-picker',
+    }, {
+      type: 'Demo',
+      display: 'KeyPicker',
+      ref: 'http://keypicker.s3-website.us-east-2.amazonaws.com/',
+    }],
+    description: [
+      'A single-page application which consolidates all mechanical keyboards into one sortable and filterable interface',
+      'Implemented front-end using Angular, Express server in Node.js and PostgreSQL for the mechanical keyboard database',
+      'Used knex.js library to convert filter requests into SQL queries',
+      'Deployed website using AWS S3 for the frontend, EC2 for Express server and RDS for PostgreSQL database',
+    ]
+  }, {
     name: 'Affine Weddings',
     technologies: [
       'ReactJS',
@@ -64,7 +89,7 @@ export const PROJECTS = [
       ref: 'https://github.com/c2khanna/lcbo-sales',
     }],
     description: [
-      'A Node.js based application that Queries the LCBO product list to extract all current items on sale',
+      'A Node.js based application that queries the LCBO product list to extract all current items on sale',
       'Responsive frontend design written with AngularJS and Angular Material',
     ]
   }

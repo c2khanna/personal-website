@@ -13,6 +13,8 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ProjectTileComponent } from './projects/project-tile/project-tile.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { FooterComponent } from './footer/footer.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FooterComponent } from './footer/footer.component';
     MglTimelineModule,
     BrowserAnimationsModule,
     NgsRevealModule.forRoot(),
-    NgxPageScrollModule
+    NgxPageScrollModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
