@@ -4,6 +4,17 @@ html {
   scroll-behavior: smooth;
 }
 
+#home,
+#about-me,
+#contact-me {
+  scroll-margin-top: 100px;
+}
+
+#work-ex,
+#proj {
+  scroll-margin-top: 56px;
+}
+
 body {
   margin: 0;
   padding: 0;
