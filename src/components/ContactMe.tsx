@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Reveal from './Reveal';
 import styles from './ContactMe.module.scss';
 
 export default function ContactMe() {
@@ -47,59 +48,63 @@ export default function ContactMe() {
         <br />
         <br />
         <br />
-        <h1>Contact Me</h1>
+        <Reveal viewFactor={0.8}>
+          <h1>Contact Me</h1>
+        </Reveal>
       </div>
       <div className={styles.contactMeContent}>
-        <div className={styles.contactMeIntro}>
-          If you have any questions or want to reach out to me, feel free to get in touch!
-        </div>
-        <form>
-          <div>
-            <input
-              type="text"
-              name="name"
-              placeholder="Name*"
-              value={formData.name}
-              onChange={handleChange}
-            />
+        <Reveal viewFactor={0.3}>
+          <div className={styles.contactMeIntro}>
+            If you have any questions or want to reach out to me, feel free to get in touch!
           </div>
-          <div>
-            <input
-              type="email"
-              name="email"
-              placeholder="Email*"
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <textarea
-              name="message"
-              placeholder="Message*"
-              rows={5}
-              value={formData.message}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              name="number"
-              placeholder="Phone Number"
-              value={formData.number}
-              onChange={handleChange}
-            />
-          </div>
-          <div>
-            <button
-              onClick={sendEmail}
-              type="button"
-              disabled={!isButtonEnabled}
-            >
-              <div>Send</div>
-            </button>
-          </div>
-        </form>
+          <form>
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Name*"
+                value={formData.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email*"
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <textarea
+                name="message"
+                placeholder="Message*"
+                rows={5}
+                value={formData.message}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="number"
+                placeholder="Phone Number"
+                value={formData.number}
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <button
+                onClick={sendEmail}
+                type="button"
+                disabled={!isButtonEnabled}
+              >
+                <div>Send</div>
+              </button>
+            </div>
+          </form>
+        </Reveal>
       </div>
     </div>
   );

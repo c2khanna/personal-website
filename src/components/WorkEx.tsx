@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { WORK_EX_DATA } from '@/data/work-ex-data';
 import { WorkExJobEntry } from '@/data/types';
+import Reveal from './Reveal';
 import styles from './WorkEx.module.scss';
 
 function formatJobDates(job: WorkExJobEntry): string {
@@ -37,7 +38,6 @@ function TimelineJobCard({ entry, isExpanded, onToggle }: TimelineJobCardProps) 
     onToggle();
   };
 
-  // Determine dot class based on expansion and whether user has interacted yet
   let dotAnimationClass = '';
   if (hasInteracted) {
     dotAnimationClass = isExpanded ? styles.dotExpanding : styles.dotCollapsing;
@@ -47,7 +47,6 @@ function TimelineJobCard({ entry, isExpanded, onToggle }: TimelineJobCardProps) 
 
   return (
     <div className={styles.jobRow}>
-      {/* Card Header acts as the coordinate container for the morphing dot */}
       <div className={styles.cardWrapper}>
         <div
           className={`${styles.cardHeader} ${isExpanded ? styles.headerExpanded : styles.headerCollapsed}`}
@@ -61,20 +60,17 @@ function TimelineJobCard({ entry, isExpanded, onToggle }: TimelineJobCardProps) 
             }
           }}
         >
-          {/* Morphing Dot Element */}
           <div
             className={`${styles.morphDot} ${dotAnimationClass}`}
             aria-hidden="true"
           />
 
-          {/* Text above the morphing background */}
           <div className={styles.headerText}>
             <div>{entry.company}</div>
             <div style={{ fontStyle: 'italic' }}>{entry.jobTitle}</div>
           </div>
         </div>
 
-        {/* Accordion Content with smooth height transition */}
         <div className={`${styles.accordionWrapper} ${isExpanded ? styles.accordionOpen : styles.accordionClosed}`}>
           <div className={styles.accordionInner}>
             <div className={styles.jobContent}>
@@ -111,35 +107,39 @@ export default function WorkEx() {
         <br />
         <br />
         <br />
-        <h1>Work Experience</h1>
+        <Reveal viewFactor={0.8}>
+          <h1>Work Experience</h1>
+        </Reveal>
       </div>
 
       <div className={styles.workExContent}>
-        <div className={styles.timeline}>
-          {/* Central vertical line */}
-          <div className={styles.timelineLine} />
+        <Reveal viewFactor={0.1}>
+          <div className={styles.timeline}>
+            {/* Central vertical line */}
+            <div className={styles.timelineLine} />
 
-          {WORK_EX_DATA.map((entry, index) => {
-            if (entry.isYear) {
-              return (
-                <div key={`year-${index}`} className={styles.yearRow}>
-                  <div className={styles.yearDot}>
-                    {entry.year}
+            {WORK_EX_DATA.map((entry, index) => {
+              if (entry.isYear) {
+                return (
+                  <div key={`year-${index}`} className={styles.yearRow}>
+                    <div className={styles.yearDot}>
+                      {entry.year}
+                    </div>
                   </div>
-                </div>
-              );
-            }
+                );
+              }
 
-            return (
-              <TimelineJobCard
-                key={`job-${index}`}
-                entry={entry}
-                isExpanded={expandedIndex === index}
-                onToggle={() => handleToggle(index)}
-              />
-            );
-          })}
-        </div>
+              return (
+                <TimelineJobCard
+                  key={`job-${index}`}
+                  entry={entry}
+                  isExpanded={expandedIndex === index}
+                  onToggle={() => handleToggle(index)}
+                />
+              );
+            })}
+          </div>
+        </Reveal>
       </div>
     </div>
   );
