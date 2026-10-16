@@ -20,17 +20,15 @@ export default function Projects() {
           Projects
         </Reveal>
       </div>
-      <div className={styles.projectsContent}>
-        <Reveal config={bodyConfig}>
-          <div className="row justify-content-center">
-            {PROJECTS.map((proj, idx) => (
-              <div key={idx} className="col-12 col-md-4 d-flex justify-content-center mb-4">
-                <ProjectTile project={proj} />
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </div>
+      <Reveal className={styles.projectsContent} config={bodyConfig}>
+        <div className={styles.row}>
+          {PROJECTS.map((proj, idx) => (
+            <div key={idx} className={styles.tileWrapper}>
+              <ProjectTile project={proj} />
+            </div>
+          ))}
+        </div>
+      </Reveal>
     </div>
   );
 }

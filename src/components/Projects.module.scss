@@ -9,4 +9,23 @@
   padding-right: 3%;
   padding-top: 100px;
   padding-bottom: 80px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.tileWrapper {
+  width: 250px;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 auto;
 }
