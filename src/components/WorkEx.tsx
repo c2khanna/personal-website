@@ -110,8 +110,8 @@ export default function WorkEx() {
         <br />
         <br />
         <br />
-        <Reveal config={headingConfig}>
-          <h1>Work Experience</h1>
+        <Reveal as="h1" config={headingConfig}>
+          Work Experience
         </Reveal>
       </div>
 

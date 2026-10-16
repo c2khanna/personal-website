@@ -9,10 +9,8 @@ const nameConfig = { reset: true, viewFactor: 0.8, viewOffset: { top: 56, right:
 export default function HomeHero() {
   return (
     <div className={styles.homeContainer} id="home">
-      <Reveal config={nameConfig}>
-        <div className={styles.nameContainer}>
-          Chaitanya Khanna
-        </div>
+      <Reveal config={nameConfig} className={styles.nameContainer}>
+        Chaitanya Khanna
       </Reveal>
     </div>
   );

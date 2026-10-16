@@ -16,8 +16,8 @@ export default function Projects() {
         <br />
         <br />
         <br />
-        <Reveal config={headingConfig}>
-          <h1>Projects</h1>
+        <Reveal as="h1" config={headingConfig}>
+          Projects
         </Reveal>
       </div>
       <div className={styles.projectsContent}>

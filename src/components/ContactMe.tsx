@@ -51,8 +51,8 @@ export default function ContactMe() {
         <br />
         <br />
         <br />
-        <Reveal config={headingConfig}>
-          <h1>Contact Me</h1>
+        <Reveal as="h1" config={headingConfig}>
+          Contact Me
         </Reveal>
       </div>
       <div className={styles.contactMeContent}>

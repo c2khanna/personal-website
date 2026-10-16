@@ -7,6 +7,7 @@ interface RevealProps {
   config?: Record<string, any>;
   className?: string;
   style?: React.CSSProperties;
+  as?: React.ElementType;
 }
 
 export default function Reveal({
@@ -14,8 +15,9 @@ export default function Reveal({
   config = {},
   className = '',
   style = {},
+  as: Component = 'div',
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<any>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -37,8 +39,8 @@ export default function Reveal({
   }, []);
 
   return (
-    <div ref={ref} className={className} style={style}>
+    <Component ref={ref} className={className} style={style}>
       {children}
-    </div>
+    </Component>
   );
 }
