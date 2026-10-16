@@ -24,7 +24,7 @@ export default function Projects() {
         <Reveal config={bodyConfig}>
           <div className="row justify-content-center">
             {PROJECTS.map((proj, idx) => (
-              <div key={idx} className="col-12 col-md-6 d-flex justify-content-center mb-4">
+              <div key={idx} className="col-12 col-md-4 d-flex justify-content-center mb-4">
                 <ProjectTile project={proj} />
               </div>
             ))}
