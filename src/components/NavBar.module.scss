@@ -1,0 +1,45 @@
+.navbar {
+  background-color: #393E4F;
+  color: #FFF;
+  padding-right: 10%;
+  padding-left: 10%;
+  min-height: 56px;
+  z-index: 1030;
+}
+
+.brand {
+  color: #FFF !important;
+  font-weight: 500;
+  transition: opacity 300ms ease, transform 300ms ease;
+  transform-origin: left center;
+}
+
+.brandVisible {
+  opacity: 1;
+  transform: scale(1, 1);
+  pointer-events: auto;
+}
+
+.brandHidden {
+  opacity: 0;
+  transform: scale(0, 0);
+  pointer-events: none;
+}
+
+.navLink {
+  color: #FFF !important;
+  padding: 0.5rem 1rem;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+
+  :global(.navbar-toggler-icon) {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+}

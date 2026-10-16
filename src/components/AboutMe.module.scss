@@ -1,0 +1,64 @@
+.aboutMeContainer {
+  padding-top: 40px;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  padding-right: 25%;
+  display: block;
+  overflow: hidden;
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+
+    a {
+      color: #393E4F;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+.leftAboutMe {
+  float: left;
+  width: 70%;
+}
+
+.rightAboutMePic {
+  float: right;
+  width: 30%;
+
+  img {
+    margin-left: 20%;
+    border-radius: 50%;
+    width: 80%;
+    max-width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutMeContainer {
+    padding-right: 10%;
+  }
+
+  .leftAboutMe {
+    float: none;
+    width: 100%;
+  }
+
+  .rightAboutMePic {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+    img {
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.homeContainer {
+  margin-top: 56px;
+  background-image: -webkit-linear-gradient(80deg, #E9E9EB 50%, #393E4F 50%);
+  background-image: linear-gradient(80deg, #E9E9EB 50%, #393E4F 50%);
+  min-height: 520px;
+  padding-right: 10%;
+  padding-left: 10%;
+  padding-top: 5%;
+}
+
+.nameContainer {
+  color: #FFF;
+  font-size: 4rem;
+  text-align: right;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .nameContainer {
+    font-size: 2.75rem;
+    padding-top: 15%;
+  }
+
+  .homeContainer {
+    min-height: 400px;
+  }
+}
