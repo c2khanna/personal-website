@@ -6,7 +6,6 @@
   min-height: 600px;
   padding-top: 20px;
   width: 70%;
-  margin: 0 auto;
 
   @media screen and (min-width: 640px) and (max-width: 913px) {
     margin: auto;
@@ -45,15 +44,23 @@
   display: block;
   margin-bottom: 50px;
   min-height: 50px;
+  width: calc(50% - 5px);
+  margin-left: calc(50% + 5px);
+
+  @media (max-width: 640px) {
+    width: calc(100% - 30px);
+    margin-left: 30px;
+  }
 }
 
 .yearDot {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  left: -5px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
   width: 50px;
   height: 50px;
-  border-radius: 50%;
+  border-radius: 100px;
   color: white;
   text-align: center;
   line-height: 50px;
@@ -61,10 +68,10 @@
   font-size: 14px;
   font-weight: 500;
   z-index: 2;
-  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 
   @media (max-width: 640px) {
-    left: 20px;
+    left: -10px;
   }
 }
 
@@ -76,23 +83,20 @@
   margin-left: calc(50% + 5px);
 
   @media (max-width: 640px) {
-    width: calc(100% - 45px);
-    margin-left: 45px;
+    width: calc(100% - 30px);
+    margin-left: 30px;
   }
 }
 
 .cardWrapper {
-  margin-left: 20px;
   position: relative;
+  width: 100%;
 }
 
 .cardHeader {
   position: relative;
   overflow: visible;
-  background-color: #ffffff;
   cursor: pointer;
-  text-align: center;
-  padding: 12px 16px;
   border-radius: 2px;
   box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
   user-select: none;
@@ -100,139 +104,146 @@
 
 .headerText {
   position: relative;
-  z-index: 2;
-  transition: color 0.3s ease;
+  display: block;
+  overflow: hidden;
+  padding: 15px;
+  text-align: center;
+  z-index: 1;
+  border-radius: 2px;
   font-size: 16px;
+  transition: color 200ms ease;
 }
 
-.headerCollapsed .headerText {
+.headerCollapsed {
+  background-color: #ffffff;
   color: #000000;
 }
 
-.headerExpanded .headerText {
+.headerExpanded {
+  background-color: transparent;
   color: #ffffff;
 }
 
-/* Morphing dot from line to header */
-.morphDot {
+/* Dots and Morphing */
+.dotCollapsed {
   position: absolute;
   top: 50%;
-  left: -25px;
-  transform: translate(-50%, -50%);
+  left: -5px;
   width: 30px;
   height: 30px;
-  border-radius: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  border-radius: 100px;
   background-color: #393e4f;
-  z-index: 1;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   pointer-events: none;
 
   @media (max-width: 640px) {
-    left: -25px;
+    left: -10px;
   }
+}
+
+.dotExpanded {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateX(0) translateY(-50%);
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: #393e4f;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .dotExpanding {
-  animation: dotExpandKeyframes 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  position: absolute;
+  background-color: #393e4f;
+  z-index: 0;
+  pointer-events: none;
+  animation: dotExpandAnim 400ms ease forwards;
 }
 
 .dotCollapsing {
-  animation: dotCollapseKeyframes 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.18s forwards;
+  position: absolute;
+  background-color: #393e4f;
+  z-index: 0;
+  pointer-events: none;
+  animation: dotCollapseAnim 200ms ease forwards;
 }
 
-.dotExpandedStatic {
-  left: 0;
-  top: 0;
-  transform: none;
-  width: 100%;
-  height: 100%;
-  border-radius: 2px;
-  opacity: 1;
-}
-
-@keyframes dotExpandKeyframes {
+@keyframes dotExpandAnim {
   0% {
-    left: -25px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: -5px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     opacity: 1;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 100px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   }
-  40% {
-    left: 50%;
+  50% {
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.5;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 100px;
+    box-shadow: none;
   }
   100% {
+    top: 50%;
     left: 0;
-    top: 0;
-    transform: none;
+    transform: translateX(0) translateY(-50%);
     width: 100%;
     height: 100%;
-    border-radius: 2px;
     opacity: 1;
+    border-radius: 0;
+    box-shadow: none;
   }
 }
 
-@keyframes dotCollapseKeyframes {
+@keyframes dotCollapseAnim {
   0% {
+    top: 50%;
     left: 0;
-    top: 0;
-    transform: none;
+    transform: translateX(0) translateY(-50%);
     width: 100%;
     height: 100%;
-    border-radius: 2px;
     opacity: 1;
+    border-radius: 0;
+    box-shadow: none;
   }
-  40% {
-    left: 50%;
+  50% {
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: 50%;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.5;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 100px;
+    box-shadow: none;
   }
   100% {
-    left: -25px;
     top: 50%;
-    transform: translate(-50%, -50%);
+    left: -5px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     opacity: 1;
+    transform: translateY(-50%) translateX(-50%);
+    border-radius: 100px;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   }
 }
 
-/* Accordion slide animation */
+/* Accordion Content */
 .accordionWrapper {
-  display: grid;
+  overflow: hidden;
   background-color: #ffffff;
   border-radius: 0 0 2px 2px;
-  overflow: hidden;
-}
-
-.accordionOpen {
-  grid-template-rows: 1fr;
   box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
-  transition: grid-template-rows 0.25s ease 0.35s;
-}
-
-.accordionClosed {
-  grid-template-rows: 0fr;
-  box-shadow: none;
-  transition: grid-template-rows 0.18s ease 0s;
-}
-
-.accordionInner {
-  min-height: 0;
-  overflow: hidden;
 }
 
 .jobContent {
@@ -243,20 +254,16 @@
   font-size: 14px;
   padding: 10px;
   overflow: hidden;
-  border-bottom: 1px solid #f0f0f0;
 }
 
 .jobTechnologies {
   float: left;
   margin: 0;
-  font-weight: 500;
-  color: #333;
 }
 
 .jobTimes {
   float: right;
   margin: 0;
-  color: #555;
 }
 
 .jobDescription {
@@ -269,9 +276,9 @@
     padding-left: 20px;
 
     li {
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       line-height: 1.5;
-      color: #333;
+      color: #212529;
     }
   }
 }
