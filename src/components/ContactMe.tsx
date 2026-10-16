@@ -60,7 +60,7 @@ export default function ContactMe() {
           <div className={styles.contactMeIntro}>
             If you have any questions or want to reach out to me, feel free to get in touch!
           </div>
-          <form>
+          <form suppressHydrationWarning>
             <div>
               <input
                 type="text"
@@ -68,6 +68,8 @@ export default function ContactMe() {
                 placeholder="Name*"
                 value={formData.name}
                 onChange={handleChange}
+                autoComplete="name"
+                suppressHydrationWarning
               />
             </div>
             <div>
@@ -77,6 +79,8 @@ export default function ContactMe() {
                 placeholder="Email*"
                 value={formData.email}
                 onChange={handleChange}
+                autoComplete="email"
+                suppressHydrationWarning
               />
             </div>
             <div>
@@ -86,6 +90,7 @@ export default function ContactMe() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
+                suppressHydrationWarning
               />
             </div>
             <div>
@@ -95,6 +100,8 @@ export default function ContactMe() {
                 placeholder="Phone Number"
                 value={formData.number}
                 onChange={handleChange}
+                autoComplete="tel"
+                suppressHydrationWarning
               />
             </div>
             <div>
