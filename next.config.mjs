@@ -6,6 +6,7 @@ const __dirname = path.dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
   reactStrictMode: true,
   outputFileTracingRoot: __dirname,
   allowedDevOrigins: ['192.168.86.71', '192.168.86.71:3000', 'localhost:3000'],
