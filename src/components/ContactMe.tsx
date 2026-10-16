@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import Reveal from './Reveal';
 import styles from './ContactMe.module.scss';
 
+const headingConfig = { reset: true, viewFactor: 0.9, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+const bodyConfig = { reset: true, viewFactor: 0.5, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+
 export default function ContactMe() {
   const [formData, setFormData] = useState({
     name: '',
@@ -48,12 +51,12 @@ export default function ContactMe() {
         <br />
         <br />
         <br />
-        <Reveal viewFactor={0.8}>
+        <Reveal config={headingConfig}>
           <h1>Contact Me</h1>
         </Reveal>
       </div>
       <div className={styles.contactMeContent}>
-        <Reveal viewFactor={0.3}>
+        <Reveal config={bodyConfig}>
           <div className={styles.contactMeIntro}>
             If you have any questions or want to reach out to me, feel free to get in touch!
           </div>

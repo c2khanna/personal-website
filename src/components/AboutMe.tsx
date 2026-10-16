@@ -4,16 +4,19 @@ import React from 'react';
 import Reveal from './Reveal';
 import styles from './AboutMe.module.scss';
 
+const headingConfig = { reset: true, viewFactor: 0.9, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+const bodyConfig = { reset: true, viewFactor: 0.5, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+
 export default function AboutMe() {
   return (
     <div className={styles.aboutMeContainer} id="about-me">
       <div className={styles.leftAboutMe}>
         <div className={styles.headingContainer}>
-          <Reveal viewFactor={0.8}>
+          <Reveal config={headingConfig}>
             <h1>About Me</h1>
           </Reveal>
         </div>
-        <Reveal viewFactor={0.4}>
+        <Reveal config={bodyConfig}>
           <div className={styles.aboutMeContent}>
             <p>
               Welcome! I’m a software developer with an interest in web and application development.
@@ -35,7 +38,7 @@ export default function AboutMe() {
         </Reveal>
       </div>
       <div className={styles.rightAboutMePic}>
-        <Reveal viewFactor={0.4}>
+        <Reveal config={bodyConfig}>
           <img src="/assets/about-me-pic.jpeg" alt="profile-pic" />
         </Reveal>
       </div>

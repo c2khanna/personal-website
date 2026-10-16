@@ -6,6 +6,9 @@ import { WorkExJobEntry } from '@/data/types';
 import Reveal from './Reveal';
 import styles from './WorkEx.module.scss';
 
+const headingConfig = { reset: true, viewFactor: 0.9, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+const bodyConfig = { reset: true, viewFactor: 0.15, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+
 function formatJobDates(job: WorkExJobEntry): string {
   const months = [
     'January', 'February', 'March', 'April', 'May', 'June',
@@ -107,13 +110,13 @@ export default function WorkEx() {
         <br />
         <br />
         <br />
-        <Reveal viewFactor={0.8}>
+        <Reveal config={headingConfig}>
           <h1>Work Experience</h1>
         </Reveal>
       </div>
 
       <div className={styles.workExContent}>
-        <Reveal viewFactor={0.1}>
+        <Reveal config={bodyConfig}>
           <div className={styles.timeline}>
             {/* Central vertical line */}
             <div className={styles.timelineLine} />
