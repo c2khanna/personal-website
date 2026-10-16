@@ -7,7 +7,7 @@ import Reveal from './Reveal';
 import styles from './Projects.module.scss';
 
 const headingConfig = { reset: true, viewFactor: 0.9, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
-const bodyConfig = { reset: true, viewFactor: 0.05, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
+const bodyConfig = { reset: true, viewFactor: 0.2, viewOffset: { top: 56, right: 0, bottom: 0, left: 0 } };
 
 export default function Projects() {
   return (

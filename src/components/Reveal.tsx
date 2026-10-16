@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useRef, useEffect } from 'react';
+import type scrollReveal from 'scrollreveal';
 
 interface RevealProps {
   children: React.ReactNode;
-  config?: Record<string, any>;
+  config?: scrollReveal.ScrollRevealObjectOptions;
   className?: string;
   style?: React.CSSProperties;
   as?: React.ElementType;
@@ -17,13 +18,13 @@ export default function Reveal({
   style = {},
   as: Component = 'div',
 }: RevealProps) {
-  const ref = useRef<any>(null);
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    let sr: any;
+    let sr: scrollReveal.ScrollRevealObject | undefined;
     import('scrollreveal').then(({ default: ScrollReveal }) => {
       if (el) {
         sr = ScrollReveal();
