@@ -81,72 +81,176 @@
   }
 }
 
-.jobDot {
-  display: block;
+.cardWrapper {
+  margin-left: 20px;
+  position: relative;
+}
+
+.cardHeader {
+  position: relative;
+  overflow: visible;
+  background-color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 2px;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  user-select: none;
+}
+
+.headerText {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
+
+.headerCollapsed .headerText {
+  color: #000000;
+}
+
+.headerExpanded .headerText {
+  color: #ffffff;
+}
+
+/* Morphing dot from line to header */
+.morphDot {
   position: absolute;
-  left: -5px;
-  top: 25px;
+  top: 50%;
+  left: -25px;
   transform: translate(-50%, -50%);
   width: 30px;
   height: 30px;
   border-radius: 50%;
   background-color: #393e4f;
-  border: none;
-  cursor: pointer;
-  z-index: 2;
-  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
-  padding: 0;
+  z-index: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 
   @media (max-width: 640px) {
     left: -25px;
   }
 }
 
-.cardContainer {
-  margin-left: 20px;
+.dotExpanding {
+  animation: dotExpandKeyframes 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-.jobHeader {
-  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
-  color: #ffffff;
-  cursor: pointer;
-  text-align: center;
-  padding: 12px 16px;
-  background-color: #393e4f;
+.dotCollapsing {
+  animation: dotCollapseKeyframes 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0.18s forwards;
+}
+
+.dotExpandedStatic {
+  left: 0;
+  top: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
   border-radius: 2px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  opacity: 1;
 }
 
-.headerNotExpanded {
-  background-color: #ffffff;
-  color: #000000;
-
-  &:hover {
-    background-color: #f7f7f7;
+@keyframes dotExpandKeyframes {
+  0% {
+    left: -25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+  40% {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    opacity: 1;
   }
 }
 
-.jobHeaderExpanded {
-  background-color: #393e4f;
-  color: #ffffff;
+@keyframes dotCollapseKeyframes {
+  0% {
+    left: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    opacity: 1;
+  }
+  40% {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 0.6;
+  }
+  100% {
+    left: -25px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+}
+
+/* Accordion slide animation */
+.accordionWrapper {
+  display: grid;
+  background-color: #ffffff;
+  border-radius: 0 0 2px 2px;
+  overflow: hidden;
+}
+
+.accordionOpen {
+  grid-template-rows: 1fr;
+  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  transition: grid-template-rows 0.25s ease 0.35s;
+}
+
+.accordionClosed {
+  grid-template-rows: 0fr;
+  box-shadow: none;
+  transition: grid-template-rows 0.18s ease 0s;
+}
+
+.accordionInner {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .jobContent {
   background-color: #ffffff;
-  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
-  border-radius: 0 0 2px 2px;
 }
 
 .jobSubtitle {
   font-size: 14px;
   padding: 10px;
   overflow: hidden;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .jobTechnologies {
   float: left;
   margin: 0;
   font-weight: 500;
+  color: #333;
 }
 
 .jobTimes {
@@ -167,6 +271,7 @@
     li {
       margin-bottom: 6px;
       line-height: 1.5;
+      color: #333;
     }
   }
 }
