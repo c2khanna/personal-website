@@ -10,7 +10,7 @@ export default function ContactMe() {
     message: '',
     number: '',
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [isButtonEnabled, setIsButtonEnabled] = useState(true);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -19,43 +19,41 @@ export default function ContactMe() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const sendEmail = () => {
+    setIsButtonEnabled(false);
 
-    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+    if (formData.name.trim() === '' || formData.email.trim() === '' || formData.message.trim() === '') {
       alert('One or more of the required fields are empty');
+      setIsButtonEnabled(true);
       return;
     }
 
-    setStatus('sending');
-
-    // Open mailto fallback or send to API
+    const mailBody = `${formData.message}\n\nMy contact info is:\n${formData.name}\n${formData.email}\n${formData.number}`;
     const subject = encodeURIComponent('Inquiry from personal website');
-    const body = encodeURIComponent(
-      `${formData.message}\n\nMy contact info is:\n${formData.name}\n${formData.email}\n${formData.number}`
-    );
+    const body = encodeURIComponent(mailBody);
 
     window.location.href = `mailto:chaitanyakhanna13@gmail.com?subject=${subject}&body=${body}`;
 
     setTimeout(() => {
-      setStatus('idle');
-      setFormData({ name: '', email: '', message: '', number: '' });
       alert('Email client opened to send message!');
+      setFormData({ name: '', email: '', message: '', number: '' });
+      setIsButtonEnabled(true);
     }, 500);
   };
 
   return (
     <div className={styles.contactMeContainer} id="contact-me">
       <div className="heading-container">
+        <br />
+        <br />
+        <br />
         <h1>Contact Me</h1>
       </div>
-
       <div className={styles.contactMeContent}>
         <div className={styles.contactMeIntro}>
           If you have any questions or want to reach out to me, feel free to get in touch!
         </div>
-
-        <form onSubmit={handleSubmit}>
+        <form>
           <div>
             <input
               type="text"
@@ -63,7 +61,6 @@ export default function ContactMe() {
               placeholder="Name*"
               value={formData.name}
               onChange={handleChange}
-              required
             />
           </div>
           <div>
@@ -73,7 +70,6 @@ export default function ContactMe() {
               placeholder="Email*"
               value={formData.email}
               onChange={handleChange}
-              required
             />
           </div>
           <div>
@@ -83,12 +79,11 @@ export default function ContactMe() {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              required
             />
           </div>
           <div>
             <input
-              type="tel"
+              type="text"
               name="number"
               placeholder="Phone Number"
               value={formData.number}
@@ -97,11 +92,11 @@ export default function ContactMe() {
           </div>
           <div>
             <button
-              type="submit"
-              disabled={status === 'sending'}
-              className={styles.sendButton}
+              onClick={sendEmail}
+              type="button"
+              disabled={!isButtonEnabled}
             >
-              {status === 'sending' ? 'Sending...' : 'Send'}
+              <div>Send</div>
             </button>
           </div>
         </form>

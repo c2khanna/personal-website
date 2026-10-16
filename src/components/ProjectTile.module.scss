@@ -1,13 +1,15 @@
 .projectTileContainer {
-  margin: 15px;
+  margin: auto;
   width: 90%;
   max-width: 450px;
   height: 500px;
   background-color: #ffffff;
   text-align: center;
-  box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 16px;
   border-radius: 4px;
-  overflow: hidden;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
   display: flex;
   flex-direction: column;
 
@@ -15,7 +17,6 @@
     position: relative;
     height: 300px;
     width: 100%;
-    overflow: hidden;
   }
 
   .hoverContainer:hover .showOnHoverContainer {
@@ -30,7 +31,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #fcfcfc;
   }
 
   .projectLogo {
@@ -48,7 +48,6 @@
     left: 0px;
     color: #ffffff;
     background-color: rgba(57, 62, 79, 0.85);
-    animation: fadeIn 0.2s ease;
   }
 
   .linkImgContainer {
@@ -59,11 +58,6 @@
     margin: 12px;
     display: inline-block;
     padding: 10px;
-    transition: transform 0.2s ease;
-
-    &:hover {
-      transform: scale(1.1);
-    }
 
     .linkImg {
       height: 100%;
@@ -73,35 +67,21 @@
   }
 
   .projectName {
-    padding: 14px 12px 6px;
+    padding: 12px;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   .projectDescription {
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-bottom: 14px;
-    font-size: 15px;
-    color: #555;
-    line-height: 1.4;
-    overflow: hidden;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    color: #333;
   }
 
   .projectTech {
-    font-size: 18px;
+    font-size: 20px;
     padding-top: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: 500;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
   }
 }

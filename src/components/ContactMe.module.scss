@@ -4,49 +4,39 @@
 
 .contactMeContent {
   width: 100%;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  min-height: 450px;
+  margin-top: 150px;
+  min-height: 600px;
   text-align: center;
 
   .contactMeIntro {
     margin: auto;
-    width: 35%;
-    min-width: 300px;
-    padding-bottom: 24px;
+    width: 25%;
+    padding-bottom: 12px;
     font-size: 18px;
-    color: #444;
   }
 
   input,
   textarea {
     width: 35%;
-    min-width: 300px;
     margin: 6px auto;
     border-radius: 4px;
     border: 1px solid #ccc;
-    height: 38px;
+    height: 35px;
     padding-left: 10px;
     padding-top: 6px;
     outline: none;
-    font-size: 15px;
-    display: block;
-    transition: border-color 0.2s;
-
-    &:focus {
-      border-color: #393E4F;
-    }
+    font-family: inherit;
+    font-size: 14px;
+    display: inline-block;
   }
 
   textarea {
     height: 150px;
-    resize: vertical;
   }
 
-  .sendButton {
+  button {
     width: 15%;
-    min-width: 120px;
-    margin-top: 16px;
+    margin-top: 12px;
     height: 45px;
     background-color: #393E4F;
     border: 1px solid #ccc;
@@ -54,13 +44,6 @@
     border-radius: 24px;
     outline: none;
     cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    transition: background-color 0.2s, box-shadow 0.2s;
-
-    &:hover {
-      background-color: #4a5065;
-    }
 
     &:active {
       background: #606472;
@@ -69,7 +52,7 @@
     }
 
     &:disabled {
-      opacity: 0.6;
+      opacity: 0.7;
       cursor: not-allowed;
     }
   }
@@ -77,13 +60,19 @@
 
 @media (max-width: 768px) {
   .contactMeContent {
-    input,
-    textarea {
-      width: 85%;
-    }
+    margin-top: 80px;
 
     .contactMeIntro {
-      width: 85%;
+      width: 80%;
+    }
+
+    input,
+    textarea {
+      width: 80%;
+    }
+
+    button {
+      width: 40%;
     }
   }
 }

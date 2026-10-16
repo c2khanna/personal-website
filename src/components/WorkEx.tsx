@@ -31,12 +31,15 @@ export default function WorkEx() {
   return (
     <div className={styles.workExContainer} id="work-ex">
       <div className="heading-container">
+        <br />
+        <br />
+        <br />
         <h1>Work Experience</h1>
       </div>
 
       <div className={styles.workExContent}>
         <div className={styles.timeline}>
-          {/* Vertical gray line */}
+          {/* Central vertical line */}
           <div className={styles.timelineLine} />
 
           {WORK_EX_DATA.map((entry, index) => {
@@ -56,18 +59,18 @@ export default function WorkEx() {
 
             return (
               <div key={`job-${index}`} className={styles.jobRow}>
-                {/* Timeline Dot */}
+                {/* Dot placed precisely on the center line */}
                 <button
                   type="button"
-                  className={`${styles.jobDot} ${isExpanded ? styles.jobDotExpanded : styles.jobDotCollapsed}`}
+                  className={styles.jobDot}
                   onClick={() => handleToggle(index)}
                   aria-label={`Toggle details for ${entry.company}`}
                 />
 
-                {/* Card Container */}
-                <div className={styles.card}>
+                {/* Entry card on the right */}
+                <div className={styles.cardContainer}>
                   <div
-                    className={`${styles.cardHeader} ${isExpanded ? styles.cardHeaderExpanded : styles.cardHeaderCollapsed}`}
+                    className={`${styles.jobHeader} ${isExpanded ? styles.jobHeaderExpanded : styles.headerNotExpanded}`}
                     onClick={() => handleToggle(index)}
                     role="button"
                     tabIndex={0}
@@ -78,16 +81,17 @@ export default function WorkEx() {
                       }
                     }}
                   >
-                    <div className={styles.companyName}>{entry.company}</div>
-                    <div className={styles.jobTitle}>{entry.jobTitle}</div>
+                    <div>{entry.company}</div>
+                    <div style={{ fontStyle: 'italic' }}>{entry.jobTitle}</div>
                   </div>
 
                   {isExpanded && (
-                    <div className={styles.cardContent}>
+                    <div className={styles.jobContent}>
                       <div className={styles.jobSubtitle}>
-                        <span className={styles.jobTechnologies}>{techString}</span>
-                        <span className={styles.jobTimes}>{dateString}</span>
+                        <p className={styles.jobTechnologies}>{techString}</p>
+                        <p className={styles.jobTimes}>{dateString}</p>
                       </div>
+                      <br />
                       <div className={styles.jobDescription}>
                         <ul>
                           {entry.description.map((desc, dIndex) => (

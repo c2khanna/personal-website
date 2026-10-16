@@ -9,12 +9,17 @@ export default function Projects() {
   return (
     <div className={styles.projectsContainer} id="proj">
       <div className="heading-container">
+        <br />
+        <br />
+        <br />
         <h1>Projects</h1>
       </div>
       <div className={styles.projectsContent}>
-        <div className={styles.grid}>
+        <div className="row justify-content-center">
           {PROJECTS.map((proj, idx) => (
-            <ProjectTile key={idx} project={proj} />
+            <div key={idx} className="col-12 col-md-6 d-flex justify-content-center mb-4">
+              <ProjectTile project={proj} />
+            </div>
           ))}
         </div>
       </div>
