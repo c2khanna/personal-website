@@ -77,10 +77,15 @@ export async function POST(request: Request) {
       </div>
     `;
 
+    const replyEmail = email.trim();
+
     const { data, error } = await resend.emails.send({
       from: fromSender,
       to: [toEmail],
-      replyTo: email.trim(),
+      replyTo: [replyEmail],
+      headers: {
+        'Reply-To': replyEmail,
+      },
       subject: `New Inquiry from ${name.trim()} (Portfolio)`,
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${number || 'N/A'}\n\nMessage:\n${message}`,
       html: htmlContent,
