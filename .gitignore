@@ -44,4 +44,9 @@ testem.log
 .DS_Store
 Thumbs.db
 *.tsbuildinfo
-/src/app/contact-me/constants.ts
+
+# Environment variables
+.env
+.env*.local
+.env.local
+

@@ -14,35 +14,52 @@ export default function ContactMe() {
     message: '',
     number: '',
   });
-  const [isButtonEnabled, setIsButtonEnabled] = useState(true);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    if (status !== 'idle' && status !== 'loading') {
+      setStatus('idle');
+    }
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
-  const sendEmail = () => {
-    setIsButtonEnabled(false);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
 
     if (formData.name.trim() === '' || formData.email.trim() === '' || formData.message.trim() === '') {
-      alert('One or more of the required fields are empty');
-      setIsButtonEnabled(true);
+      setStatus('error');
+      setErrorMessage('Please fill out all required fields (Name, Email, Message).');
       return;
     }
 
-    const mailBody = `${formData.message}\n\nMy contact info is:\n${formData.name}\n${formData.email}\n${formData.number}`;
-    const subject = encodeURIComponent('Inquiry from personal website');
-    const body = encodeURIComponent(mailBody);
+    setStatus('loading');
+    setErrorMessage('');
 
-    window.location.href = `mailto:chaitanyakhanna13@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-    setTimeout(() => {
-      alert('Email client opened to send message!');
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message. Please try again.');
+      }
+
+      setStatus('success');
       setFormData({ name: '', email: '', message: '', number: '' });
-      setIsButtonEnabled(true);
-    }, 500);
+    } catch (err: unknown) {
+      setStatus('error');
+      setErrorMessage(
+        err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.'
+      );
+    }
   };
 
   return (
@@ -60,7 +77,7 @@ export default function ContactMe() {
           <div className={styles.contactMeIntro}>
             If you have any questions or want to reach out to me, feel free to get in touch!
           </div>
-          <form suppressHydrationWarning>
+          <form onSubmit={handleSubmit} suppressHydrationWarning>
             <div>
               <input
                 type="text"
@@ -69,6 +86,8 @@ export default function ContactMe() {
                 value={formData.name}
                 onChange={handleChange}
                 autoComplete="name"
+                required
+                disabled={status === 'loading'}
                 suppressHydrationWarning
               />
             </div>
@@ -80,6 +99,8 @@ export default function ContactMe() {
                 value={formData.email}
                 onChange={handleChange}
                 autoComplete="email"
+                required
+                disabled={status === 'loading'}
                 suppressHydrationWarning
               />
             </div>
@@ -90,6 +111,8 @@ export default function ContactMe() {
                 rows={5}
                 value={formData.message}
                 onChange={handleChange}
+                required
+                disabled={status === 'loading'}
                 suppressHydrationWarning
               />
             </div>
@@ -101,16 +124,29 @@ export default function ContactMe() {
                 value={formData.number}
                 onChange={handleChange}
                 autoComplete="tel"
+                disabled={status === 'loading'}
                 suppressHydrationWarning
               />
             </div>
+
+            {status === 'success' && (
+              <div className={`${styles.statusMessage} ${styles.statusSuccess}`}>
+                Thank you! Your message has been sent successfully.
+              </div>
+            )}
+
+            {status === 'error' && (
+              <div className={`${styles.statusMessage} ${styles.statusError}`}>
+                {errorMessage}
+              </div>
+            )}
+
             <div>
               <button
-                onClick={sendEmail}
-                type="button"
-                disabled={!isButtonEnabled}
+                type="submit"
+                disabled={status === 'loading'}
               >
-                <div>Send</div>
+                <div>{status === 'loading' ? 'Sending...' : 'Send'}</div>
               </button>
             </div>
           </form>
