@@ -7,6 +7,30 @@ export const WORK_EX_DATA: WorkExEntry[] = [
   },
   {
     isYear: false,
+    jobTitle: 'Full Stack Engineer',
+    company: 'Yelp Inc.',
+    technologies: [
+      'Python',
+      'React',
+      'Typescript',
+      'GraphQL',
+    ],
+    startDate: '2021-02-21',
+    endDate: '',
+    description: [
+      'Led multiple projects that recommend new actions to business owners based on their Yelp Ads performance leading to multi-million dollar revenue growth',
+      'Created various reusable server-driven UI components which surface data-driven insights on the Yelp Ads dashboard and cancel flow to reduce churn',
+      'Improved developer experience by creating a Chrome extension that simplifies batched GraphQL queries and their responses in the browser',
+      'Collaborated with cross-functional and cross-platform partners such as product managers and designers to define scope of the projects',
+      'Actively participated in a company-wide mentorship program as a senior engineer to help other engineers achieve career goals at Yelp',
+    ]
+  },
+  {
+    isYear: true,
+    year: 2021
+  },
+  {
+    isYear: false,
     jobTitle: 'Software Consultant',
     company: 'Capgemini Canada Inc. (Manulife)',
     technologies: [
@@ -15,7 +39,7 @@ export const WORK_EX_DATA: WorkExEntry[] = [
       'Redux',
     ],
     startDate: '2018-10-15',
-    endDate: '',
+    endDate: '2021-02-15',
     description: [
       'Developed a unified customer login portal for all Manulife products using ReactJS and Node.js',
       'Implemented state management using Redux to reduce redundant network calls and improve latency',
